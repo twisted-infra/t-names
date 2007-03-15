@@ -14,6 +14,7 @@ intarweb = '198.49.126.149'
 cube = '66.35.39.65'
 pyramid = '198.49.126.190'
 boson = '209.6.216.253'
+googleHosting = 'ghs.google.com'
 
 def nameservers(host):
     """

@@ -3,10 +3,10 @@ from twisted.names.authority import getSerial
 
 name = 'twistedmatrix.com'
 
-from hosts import pyramid, cube, wolfwood, xpdev, planet, nameservers, addSubdomains
+from hosts import pyramid, cube, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
 
 subs = {
-    pyramid: ['', 'projects.', 'smtp.', 'mail.', 'reality.', 'pyramid.', 'irc.', 'ftp.', 'radix.', 'saph.', 'java.', 'www.'],
+    pyramid: ['', 'projects.', 'smtp.', 'mail.', 'reality.', 'pyramid.', 'irc.', 'ftp.', 'saph.', 'java.', 'www.'],
     cube: ['cube.'],
     wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
     xpdev: ['xpdev.'],
@@ -45,6 +45,7 @@ zone = [
     MX(name, 5, 'mail.' + name, ttl='1H'),
 
     CNAME('planet.twistedmatrix.com', planet, ttl='1H'),
+    CNAME('radix.twistedmatrix.com', googleHosting, ttl='1H'),
 ] + nameservers(name)
 
 addSubdomains(name, zone, subs)
