@@ -13,7 +13,7 @@ tesla = '198.49.126.204'
 intarweb = '198.49.126.149'
 cube = '66.35.39.65'
 pyramid = '198.49.126.190'
-boson = '216.15.126.201'
+boson = '209.6.216.253'
 
 def nameservers(host):
     """
