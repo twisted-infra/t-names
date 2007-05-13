@@ -30,4 +30,4 @@ function terminate() {
 	fi
 }
 
-terminate /home/t-names/Run/dns/twistd.pid
+terminate /srv/t-names/Run/dns/twistd.pid

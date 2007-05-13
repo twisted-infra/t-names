@@ -6,8 +6,8 @@ name = 'twistedmatrix.com'
 from hosts import pyramid, cube, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
 
 subs = {
-    pyramid: ['', 'projects.', 'smtp.', 'mail.', 'reality.', 'pyramid.', 'irc.', 'ftp.', 'saph.', 'java.', 'www.'],
-    cube: ['cube.'],
+    pyramid: ['pyramid.'],
+    cube: ['', 'cube.', 'projects.', 'reality.', 'irc.', 'ftp.', 'saph.', 'java.', 'www.', 'smtp.', 'mail.', 'buildbot.'],
     wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
     xpdev: ['xpdev.'],
 }
@@ -42,7 +42,7 @@ zone = [
         ttl='1H',
     ),
 
-    MX(name, 5, 'mail.' + name, ttl='1H'),
+    MX(name, 5, 'smtp.' + name, ttl='1H'),
 
     CNAME('planet.twistedmatrix.com', planet, ttl='1H'),
     CNAME('radix.twistedmatrix.com', googleHosting, ttl='1H'),
