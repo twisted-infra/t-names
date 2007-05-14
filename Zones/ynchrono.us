@@ -3,11 +3,12 @@ from twisted.names.authority import getSerial
 
 name = 'ynchrono.us'
 
-from hosts import pyramid, neutrino, nameservers, addSubdomains
+from hosts import cube, tesla, neutrino, addSubdomains
 
 subs = {
-    pyramid: ['as.'],
+    cube: ['as.', 'ns1.'],
     neutrino: ['s.'],
+    tesla: ['ns2.'],
 }
 
 zone = [
@@ -37,6 +38,9 @@ zone = [
         # Minimum TTL
         minimum = "1D"
     ),
-] + nameservers(name)
+
+    NS(name, 'ns1.ynchrono.us'),
+    NS(name, 'ns2.ynchrono.us'),
+]
 
 addSubdomains(name, zone, subs)
