@@ -6,7 +6,7 @@ name = 'intarweb.us'
 from hosts import neutrino, boson, cube, tesla, addSubdomains
 
 subs = {
-    neutrino: ['', 'www.', 'mail.', 'neutrino.', 'exarkun.'],
+    neutrino: ['', 'www.', 'mail.', 'neutrino.', 'exarkun.', 'pypy.'],
     boson: ['home.'],
     cube: ['ns1.'],
     tesla: ['ns2.'],
@@ -44,6 +44,13 @@ zone = [
 
     NS(name, 'ns1.intarweb.us'),
     NS(name, 'ns2.intarweb.us'),
+
+    CNAME('cname-loop.intarweb.us', 'cname-loop.intarweb.us'),
+    CNAME('cname-chain-1.intarweb.us', 'cname-chain-2.intarweb.us'),
+    CNAME('cname-chain-2.intarweb.us', 'mail.intarweb.us'),
+
+    CNAME('cname-chain-3.intarweb.us', 'cname-chain-4.intarweb.us'),
+    CNAME('cname-chain-4.intarweb.us', 'intarweb.us'),
 ]
 
 addSubdomains(name, zone, subs)
