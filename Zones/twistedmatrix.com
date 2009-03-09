@@ -47,6 +47,7 @@ zone = [
     CNAME('planet.twistedmatrix.com', planet, ttl='1H'),
     CNAME('radix.twistedmatrix.com', googleHosting, ttl='1H'),
     CNAME('washort.twistedmatrix.com', googleHosting, ttl='1H'),
+    CNAME('glyph.twistedmatrix.com', googleHosting, ttl='1H'),
     CNAME('labs.twistedmatrix.com', googleHosting, ttl='1H'),
 ] + nameservers(name)
 
