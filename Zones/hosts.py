@@ -3,7 +3,7 @@ from twisted.names.dns import Record_NS, Record_A
 
 pyramid = '198.49.126.190'
 neutrino = '198.49.126.149'
-wolfwood = '198.49.126.131'
+wolfwood = '66.35.48.24'
 planet = 'mag.ik.nu'
 xpdev = '66.219.41.216'
 cube = '66.35.39.65'
