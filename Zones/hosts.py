@@ -21,10 +21,10 @@ def nameservers(host):
     Return NS records and A record glue for the given host.
     """
     return [
-        (host, Record_NS('ns1.twistedmatrix.com', ttl='1H')),
-        (host, Record_NS('ns2.twistedmatrix.com', ttl='1H')),
-        ('ns1.twistedmatrix.com', Record_A(cube, ttl='1H')),
-        ('ns2.twistedmatrix.com', Record_A(tmrc, ttl='1H'))]
+        (host, Record_NS('ns1.twistedmatrix.com', ttl='1D')),
+        (host, Record_NS('ns2.twistedmatrix.com', ttl='1D')),
+        ('ns1.twistedmatrix.com', Record_A(cube, ttl='1D')),
+        ('ns2.twistedmatrix.com', Record_A(tmrc, ttl='1D'))]
 
 
 def addSubdomains(host, zone, subs):
@@ -33,4 +33,4 @@ def addSubdomains(host, zone, subs):
     """
     for (ip, hosts) in subs.items():
         for sub in hosts:
-            zone.append((sub + host, Record_A(ip, ttl="1H")))
+            zone.append((sub + host, Record_A(ip, ttl="1D")))

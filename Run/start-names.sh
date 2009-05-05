@@ -1,9 +1,11 @@
 #!/bin/bash
 
-Z=$HOME/Zones
-PYTHONPATH=$PYTHONPATH:$Z
+. ~t-names/.bashrc
 
-cd $HOME/Run/dns
+Z=~t-names/Zones
+export PYTHONPATH=$PYTHONPATH:$Z
+
+cd ~t-names/Run/dns
 
 authbind --deep twistd dns \
     --pyzone $Z/twistedmatrix.com \
