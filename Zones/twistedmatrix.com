@@ -28,27 +28,27 @@ zone = [
         serial = getSerial(),
 
         # Time interval before zone should be refreshed
-        refresh = "1H",
+        refresh = "1D",
 
         # Interval before failed refresh should be retried
         retry = "15M",
 
         # Upper limit on time interval before expiry
-        expire = "1H",
+        expire = "1D",
 
         # Minimum TTL
-        minimum = "1H",
+        minimum = "1D",
 
-        ttl='1H',
+        ttl="1D",
     ),
 
-    MX(name, 5, 'mail.' + name, ttl='1H'),
+    MX(name, 5, 'mail.' + name, ttl='1D'),
 
-    CNAME('planet.twistedmatrix.com', planet, ttl='1H'),
-    CNAME('radix.twistedmatrix.com', googleHosting, ttl='1H'),
-    CNAME('washort.twistedmatrix.com', googleHosting, ttl='1H'),
-    CNAME('glyph.twistedmatrix.com', googleHosting, ttl='1H'),
-    CNAME('labs.twistedmatrix.com', googleHosting, ttl='1H'),
+    CNAME('planet.twistedmatrix.com', planet, ttl='1D'),
+    CNAME('radix.twistedmatrix.com', googleHosting, ttl='1D'),
+    CNAME('washort.twistedmatrix.com', googleHosting, ttl='1D'),
+    CNAME('glyph.twistedmatrix.com', googleHosting, ttl='1D'),
+    CNAME('labs.twistedmatrix.com', googleHosting, ttl='1D'),
 ] + nameservers(name)
 
 addSubdomains(name, zone, subs)
