@@ -3,10 +3,11 @@ from twisted.names.authority import getSerial
 
 name = 'intarweb.us'
 
-from hosts import neutrino, boson, cube, tesla, addSubdomains
+from hosts import neutrino, boson, cube, tesla, paper, addSubdomains
 
 subs = {
-    neutrino: ['', 'www.', 'mail.', 'neutrino.', 'exarkun.', 'pypy.'],
+    neutrino: ['mail.', 'neutrino.', 'pypy.'],
+    paper: ['', 'www.', 'exarkun.'],
     boson: ['home.'],
     cube: ['ns1.'],
     tesla: ['ns2.'],
@@ -21,7 +22,7 @@ zone = [
         mname = "ns1.twistedmatrix.com",
 
         # Mailbox of individual who handles this
-        rname = "exarkun.divmod.com",
+        rname = "exarkun.twistedmatrix.com",
 
         # Unique serial identifying this SOA data
         # <4-year> <2-month> <2-day> <2-counter>

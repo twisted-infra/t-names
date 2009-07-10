@@ -7,7 +7,6 @@ wolfwood = '66.35.48.24'
 planet = 'mag.ik.nu'
 xpdev = '66.219.41.216'
 cube = '66.35.39.65'
-tesla = '198.49.126.204'
 tmrc = '18.150.1.81'
 tesla = '198.49.126.204'
 intarweb = '198.49.126.149'
@@ -15,6 +14,7 @@ cube = '66.35.39.65'
 pyramid = '198.49.126.190'
 boson = '209.6.216.253'
 googleHosting = 'ghs.google.com'
+paper = '67.207.132.219'
 
 def nameservers(host):
     """
