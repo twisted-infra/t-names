@@ -6,8 +6,8 @@ name = 'intarweb.us'
 from hosts import neutrino, boson, cube, tesla, paper, addSubdomains
 
 subs = {
-    neutrino: ['mail.', 'neutrino.', 'pypy.'],
-    paper: ['', 'www.', 'exarkun.'],
+    neutrino: ['neutrino.', 'pypy.'],
+    paper: ['', 'www.', 'exarkun.', 'mail.'],
     boson: ['home.'],
     cube: ['ns1.'],
     tesla: ['ns2.'],
