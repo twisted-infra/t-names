@@ -12,7 +12,7 @@ tesla = '78.46.87.228'
 intarweb = '198.49.126.149'
 cube = '66.35.39.65'
 pyramid = '198.49.126.190'
-boson = '146.115.34.114'
+boson = '209.6.43.126'
 googleHosting = 'ghs.google.com'
 paper = '67.207.132.219'
 
