@@ -3,11 +3,12 @@ from twisted.names.authority import getSerial
 
 name = 'ynchrono.us'
 
-from hosts import cube, tesla, neutrino, paper, addSubdomains
+from hosts import cube, tesla, neutrino, paper, posterous, addSubdomains
 
 subs = {
-    cube: ['as.', 'ns1.'],
+    cube: ['ns1.'],
     paper: ['s.'],
+    posterous: ['as.'],
     tesla: ['ns2.'],
 }
 
