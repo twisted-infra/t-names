@@ -15,6 +15,7 @@ pyramid = '198.49.126.190'
 boson = '209.6.43.126'
 googleHosting = 'ghs.google.com'
 paper = '67.207.132.219'
+posterous = '66.216.125.32'
 
 def nameservers(host):
     """
