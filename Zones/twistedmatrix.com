@@ -7,7 +7,7 @@ from hosts import cube, wolfwood, xpdev, planet, nameservers, addSubdomains, goo
 
 subs = {
     cube: ['', 'cube.', 'projects.', 'reality.', 'irc.', 'ftp.', 'saph.',
-           'java.', 'www.', 'smtp.', 'mail.', 'buildbot.'],
+           'java.', 'www.', 'smtp.', 'mail.', 'buildbot.', 'speed.'],
     wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
     xpdev: ['xpdev.'],
 }
