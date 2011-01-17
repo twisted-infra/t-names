@@ -1,7 +1,7 @@
 from twisted.names.authority import getSerial
 
 tmtl = '184.106.136.126'
-subs = ['', 'www.']
+subs = [] # ['', 'www.']
 name = 'divmod.com'
 
 zone = [
@@ -29,7 +29,7 @@ zone = [
         expire = "1D",
 
         # Minimum TTL
-        minimum = "1D"
+        minimum = "1D",
 
         # Default TTL for records in this zone
         ttl="1D",
