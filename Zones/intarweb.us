@@ -8,7 +8,7 @@ from hosts import neutrino, boson, cube, tesla, paper, addSubdomains
 subs = {
     neutrino: ['neutrino.', 'pypy.'],
     paper: ['', 'www.', 'exarkun.', 'mail.', 'irc.'],
-    boson: ['home.'],
+    boson: ['home.', 'redmine.'],
     cube: ['ns1.'],
     tesla: ['ns2.'],
 }
