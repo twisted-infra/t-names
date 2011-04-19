@@ -3,14 +3,14 @@ from twisted.names.authority import getSerial
 
 name = 'intarweb.us'
 
-from hosts import neutrino, boson, cube, tesla, paper, addSubdomains
+from hosts import neutrino, boson, cube, tmtl, paper, addSubdomains
 
 subs = {
     neutrino: ['neutrino.', 'pypy.'],
     paper: ['', 'www.', 'exarkun.', 'mail.', 'irc.'],
     boson: ['home.', 'redmine.'],
     cube: ['ns1.'],
-    tesla: ['ns2.'],
+    tmtl: ['ns2.'],
 }
 
 zone = [
