@@ -3,7 +3,7 @@ from twisted.names.authority import getSerial
 
 name = 'twistedmatrix.com'
 
-from hosts import cube, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
+from hosts import cube, tmtl, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
 
 subs = {
     cube: ['', 'cube.', 'projects.', 'reality.', 'irc.', 'ftp.', 'saph.',
@@ -50,6 +50,6 @@ zone = [
     CNAME('glyph.twistedmatrix.com', googleHosting, ttl='1D'),
     CNAME('secret.glyph.twistedmatrix.com', googleHosting, ttl='1D'),
     CNAME('labs.twistedmatrix.com', googleHosting, ttl='1D'),
-] + nameservers(name)
+] + nameservers(name, cube, tmtl)
 
 addSubdomains(name, zone, subs)
