@@ -11,4 +11,6 @@ authbind --deep twistd dns \
     --pyzone $Z/twistedmatrix.com \
     --pyzone $Z/divunal.com \
     --pyzone $Z/intarweb.us \
-    --pyzone $Z/ynchrono.us
+    --pyzone $Z/ynchrono.us \
+    --pyzone $Z/divmod.com \
+    --pyzone $Z/divmod.org
