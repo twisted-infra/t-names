@@ -8,7 +8,7 @@ from hosts import cube, tmtl, neutrino, paper, posterous, addSubdomains
 subs = {
     cube: ['ns1.'],
     paper: ['s.'],
-    tmtl: ['ns2.'],
+    tmtl: ['ns2.', ''],
 }
 
 zone = [
