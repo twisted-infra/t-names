@@ -3,7 +3,7 @@ from twisted.names.authority import getSerial
 
 name = 'divunal.com'
 
-from hosts import cube, nameservers, addSubdomains
+from hosts import cube, tmtl, nameservers, addSubdomains
 
 subs = {
     cube: [''],
@@ -38,6 +38,6 @@ zone = [
     ),
 
     MX(name, 10, 'mail.twistedmatrix.com'),
-] + nameservers(name)
+] + nameservers(name, cube, tmtl)
 
 addSubdomains(name, zone, subs)
