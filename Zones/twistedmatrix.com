@@ -3,12 +3,14 @@ from twisted.names.authority import getSerial
 
 name = 'twistedmatrix.com'
 
-from hosts import cube, tmtl, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
+from hosts import cube, octahedron, tmtl, oloid, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
 
 subs = {
     cube: ['', 'cube.', 'projects.', 'reality.', 'irc.', 'ftp.', 'saph.',
            'java.', 'www.', 'smtp.', 'mail.', 'buildbot.', 'speed.'],
     wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
+    oloid: ['oloid.'],
+    octo: ['octahedron.'],
     xpdev: ['xpdev.'],
 }
 
