@@ -17,7 +17,7 @@ paper = '67.207.132.219'
 posterous = '66.216.125.32'
 tmtl = '184.106.136.126'
 oloid = '64.90.56.39'
-octahedron = '66.35.39.66'
+dornkirk = '66.35.39.66'
 
 def nameservers(host, *addresses):
     """
