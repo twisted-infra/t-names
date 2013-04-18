@@ -1,7 +1,7 @@
 
-from fabric.api import put, task, cd, settings, run
+from fabric.api import task, settings, run
 
-from braid import authbind, requires_root, git
+from braid import authbind, requires_root, git, cron
 from braid.twisted import service
 
 serviceName = 't-names'
@@ -24,7 +24,8 @@ def install():
 
     with settings(user=serviceName):
         run('ln -nsf Names/start start')
-    update()
+        update()
+        cron.install(serviceName, 'Names/crontab')
 
 @task
 def update():
