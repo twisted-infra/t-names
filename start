@@ -1,11 +1,12 @@
 #!/bin/bash
 
-Z=~t-names/Zones
+Z=~/Names/Zones
 export PYTHONPATH=$PYTHONPATH:$Z
 
-cd ~t-names/Run/dns
-
-authbind --deep /srv/pypy/bin/pypy /usr/bin/twistd dns \
+authbind --deep ~pypy/bin/twistd \
+    --logfile ~/Run/twistd.log \
+    --pidfile ~/Run/twistd.pid \
+    dns \
     --pyzone $Z/twistedmatrix.com \
     --pyzone $Z/divunal.com \
     --pyzone $Z/intarweb.us \
