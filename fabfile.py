@@ -33,25 +33,4 @@ def update():
         git.branch('https://github.com/twisted-infra/t-names', 'Names')
         # TODO restart
 
-
-@task
-def start():
-    with settings(user=serviceName):
-        run('./start', pty=False)
-
-
-@task
-def stop():
-    with settings(user=serviceName):
-        run('./stop')
-
-
-@task
-def restart():
-    stop()
-    start()
-
-@task
-def log():
-    with settings(user=serviceName):
-        run('tail -f twistd.log')
+globals().update(service.serviceTasks('t-names'))
