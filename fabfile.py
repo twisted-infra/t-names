@@ -1,37 +1,40 @@
+"""
+Support for DNS service installation and management.
+"""
 
-from fabric.api import task, settings, run
+from fabric.api import run, settings
 
-from braid import authbind, requires_root, git, cron
+from braid import authbind, requiresRoot, git  #, cron
 from braid.twisted import service
+from braid.config import test, prod, environment
 
-serviceName = 't-names'
 
-@task
-@requires_root
-def install():
-    # TODO:
-    # - Setup zone files (incl. PYTHONPATH in script if needed)
-    # - Rename dns to t-names or whatever (locations, scripts,...)
+class TwistedNames(service.Service):
+    @service.task
+    @requiresRoot
+    def install(self):
+        # Bootstrap a new service environment
+        self.bootstrap()
 
-    # Bootstrap a new service environment
-    service.bootstrap(serviceName)
+        # Setup authbind
+        authbind.install()
+        authbind.allow(self.serviceUser, 53)
 
-    # Setup authbind
-    authbind.install()
-    authbind.allow(serviceName, 53)
+        # Setup GIT
+        git.install()
 
-    git.install()
+        with settings(user=self.serviceUser):
+            run('ln -nsf Names/start start')
+            self.update()
+            # FIXME: Uncomment once cron.py is commited to braid
+            #cron.install(env.user, 'Names/crontab')
 
-    with settings(user=serviceName):
-        run('ln -nsf Names/start start')
-        update()
-        cron.install(serviceName, 'Names/crontab')
+    @service.task
+    def update(self):
+        with settings(user=self.serviceUser):
+            # TODO: This is a temp location for testing
+            git.branch('https://github.com/twisted-infra/t-names', 'Names')
+            # TODO restart
 
-@task
-def update():
-    with settings(user=serviceName):
-        # TODO: This is a temp location for testing
-        git.branch('https://github.com/twisted-infra/t-names', 'Names')
-        # TODO restart
 
-globals().update(service.serviceTasks('t-names'))
+globals().update(TwistedNames('t-names').getTasks())
