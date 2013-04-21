@@ -20,11 +20,7 @@ class TwistedNames(service.Service):
         self.task_bootstrap()
 
         # Setup authbind
-        authbind.install()
         authbind.allow(self.serviceUser, 53)
-
-        # Setup GIT
-        git.install()
 
         with settings(user=self.serviceUser):
             run('ln -nsf {}/start {}/start'.format(self.srcDir, self.binDir))
