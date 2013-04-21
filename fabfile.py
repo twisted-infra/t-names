@@ -4,7 +4,7 @@ Support for DNS service installation and management.
 
 from fabric.api import run, settings
 
-from braid import authbind, git  #, cron
+from braid import authbind, git, cron
 from braid.twisted import service
 
 # TODO: Move these somewhere else and make them easily extendable
@@ -29,8 +29,7 @@ class TwistedNames(service.Service):
         with settings(user=self.serviceUser):
             run('ln -nsf {}/start {}/start'.format(self.srcDir, self.binDir))
             self.task_update()
-            # FIXME: Uncomment once cron.py is commited to braid
-            #cron.install(env.user, 'Names/crontab')
+            cron.install(env.user, '{}/crontab'.format(self.srcDir))
 
     def task_update(self):
         with settings(user=self.serviceUser):
