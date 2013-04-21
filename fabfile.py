@@ -8,7 +8,7 @@ from braid import authbind, git, cron
 from braid.twisted import service
 
 # TODO: Move these somewhere else and make them easily extendable
-from braid.config import test, prod, environment
+from braid import config
 
 
 class TwistedNames(service.Service):
