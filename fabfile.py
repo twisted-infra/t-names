@@ -13,6 +13,9 @@ class TwistedNames(service.Service):
     @service.task
     @requiresRoot
     def install(self):
+        """
+        Install t-names, a Twisted Names based DNS server.
+        """
         # Bootstrap a new service environment
         self.bootstrap()
 
@@ -24,7 +27,7 @@ class TwistedNames(service.Service):
         git.install()
 
         with settings(user=self.serviceUser):
-            run('ln -nsf Names/start start')
+            run('ln -nsf {}/start {}/start'.format(self.srcDir, self.binDir))
             self.update()
             # FIXME: Uncomment once cron.py is commited to braid
             #cron.install(env.user, 'Names/crontab')
@@ -33,7 +36,7 @@ class TwistedNames(service.Service):
     def update(self):
         with settings(user=self.serviceUser):
             # TODO: This is a temp location for testing
-            git.branch('https://github.com/twisted-infra/t-names', 'Names')
+            git.branch('https://github.com/twisted-infra/t-names', self.srcDir)
             # TODO restart
 
 
