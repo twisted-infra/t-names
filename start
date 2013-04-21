@@ -4,8 +4,8 @@ Z=~/src/zones
 export PYTHONPATH=$PYTHONPATH:$Z
 
 authbind --deep ~pypy/bin/twistd \
-    --logfile ~/Run/twistd.log \
-    --pidfile ~/Run/twistd.pid \
+    --logfile ~/run/twistd.log \
+    --pidfile ~/log/twistd.pid \
     dns \
     --pyzone $Z/twistedmatrix.com \
     --pyzone $Z/divunal.com \
