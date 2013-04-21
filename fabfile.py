@@ -17,7 +17,7 @@ class TwistedNames(service.Service):
         Install t-names, a Twisted Names based DNS server.
         """
         # Bootstrap a new service environment
-        self.task_bootstrap()
+        self.bootstrap()
 
         # Setup authbind
         authbind.allow(self.serviceUser, 53)
@@ -25,7 +25,7 @@ class TwistedNames(service.Service):
         with settings(user=self.serviceUser):
             run('ln -nsf {}/start {}/start'.format(self.srcDir, self.binDir))
             self.task_update()
-            cron.install(env.user, '{}/crontab'.format(self.srcDir))
+            cron.install(self.serviceUser, '{}/crontab'.format(self.srcDir))
 
     def task_update(self):
         with settings(user=self.serviceUser):
