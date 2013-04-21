@@ -1,6 +1,7 @@
 
 from twisted.names.dns import Record_NS, Record_A
 
+
 pyramid = '198.49.126.190'
 neutrino = '198.49.126.149'
 wolfwood = '66.35.48.24'
@@ -19,6 +20,7 @@ tmtl = '184.106.136.126'
 oloid = '64.90.56.39'
 dornkirk = '66.35.39.66'
 
+
 def nameservers(host, *addresses):
     """
     Return NS records and A record glue for the given host.
@@ -28,8 +30,9 @@ def nameservers(host, *addresses):
     records = []
     for i, addr in enumerate(addresses):
         records.extend([
-                (host, Record_NS('ns%d.twistedmatrix.com' % (i + 1,), ttl='1D')),
-                ('ns%d.twistedmatrix.com' % (i + 1,), Record_A(addr, ttl='1D'))])
+            (host, Record_NS('ns%d.twistedmatrix.com' % (i + 1,), ttl='1D')),
+            ('ns%d.twistedmatrix.com' % (i + 1,), Record_A(addr, ttl='1D'))
+        ])
     return records
 
 
