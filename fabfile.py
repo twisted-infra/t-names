@@ -28,6 +28,9 @@ class TwistedNames(service.Service):
             cron.install(self.serviceUser, '{}/crontab'.format(self.srcDir))
 
     def task_update(self):
+        """
+        Update config.
+        """
         with settings(user=self.serviceUser):
             # TODO: This is a temp location for testing
             git.branch('https://github.com/twisted-infra/t-names', self.srcDir)
