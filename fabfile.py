@@ -6,6 +6,8 @@ from fabric.api import run, settings
 
 from braid import authbind, requiresRoot, git  #, cron
 from braid.twisted import service
+
+# TODO: Move these somewhere else and make them easily extendable
 from braid.config import test, prod, environment
 
 
