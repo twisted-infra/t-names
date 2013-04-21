@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Z=~/Names/Zones
+Z=~/src/zones
 export PYTHONPATH=$PYTHONPATH:$Z
 
 authbind --deep ~pypy/bin/twistd \
