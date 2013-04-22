@@ -23,9 +23,9 @@ class TwistedNames(service.Service):
         authbind.allow(self.serviceUser, 53)
 
         with settings(user=self.serviceUser):
-            run('ln -nsf {}/start {}/start'.format(self.srcDir, self.binDir))
+            run('ln -nsf {}/start {}/start'.format(self.configDir, self.binDir))
             self.task_update()
-            cron.install(self.serviceUser, '{}/crontab'.format(self.srcDir))
+            cron.install(self.serviceUser, '{}/crontab'.format(self.configDir))
 
     def task_update(self):
         """
@@ -33,7 +33,7 @@ class TwistedNames(service.Service):
         """
         with settings(user=self.serviceUser):
             # TODO: This is a temp location for testing
-            git.branch('https://github.com/twisted-infra/t-names', self.srcDir)
+            git.branch('https://github.com/twisted-infra/t-names', self.configDir)
             # TODO restart
 
 
