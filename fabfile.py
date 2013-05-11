@@ -7,11 +7,12 @@ from fabric.api import run, settings
 from braid import authbind, git, cron
 from braid.twisted import service
 
-# TODO: Move these somewhere else and make them easily extendable
 from braid import config
+_hush_pyflakes = [ config ]
 
 
 class TwistedNames(service.Service):
+
     def task_install(self):
         """
         Install t-names, a Twisted Names based DNS server.
@@ -27,14 +28,15 @@ class TwistedNames(service.Service):
             self.task_update()
             cron.install(self.serviceUser, '{}/crontab'.format(self.configDir))
 
+
     def task_update(self):
         """
-        Update config.
+        Update config and restart.
         """
         with settings(user=self.serviceUser):
-            # TODO: This is a temp location for testing
             git.branch('https://github.com/twisted-infra/t-names', self.configDir)
-            # TODO restart
+        self.task_restart()
+
 
 
 globals().update(TwistedNames('t-names').getTasks())
