@@ -25,16 +25,22 @@ class TwistedNames(service.Service):
 
         with settings(user=self.serviceUser):
             run('/bin/ln -nsf {}/start {}/start'.format(self.configDir, self.binDir))
-            self.task_update()
+            self.update()
             cron.install(self.serviceUser, '{}/crontab'.format(self.configDir))
 
+
+    def update(self):
+        """
+        Update config.
+        """
+        with settings(user=self.serviceUser):
+            git.branch('https://github.com/twisted-infra/t-names', self.configDir)
 
     def task_update(self):
         """
         Update config and restart.
         """
-        with settings(user=self.serviceUser):
-            git.branch('https://github.com/twisted-infra/t-names', self.configDir)
+        self.update()
         self.task_restart()
 
 
