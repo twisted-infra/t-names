@@ -3,12 +3,10 @@ from twisted.names.authority import getSerial
 
 name = 'intarweb.us'
 
-from hosts import neutrino, boson, cube, tmtl, paper, addSubdomains
+from hosts import cube, tmtl, paper, addSubdomains
 
 subs = {
-    neutrino: ['neutrino.', 'pypy.'],
-    paper: ['', 'www.', 'exarkun.', 'mail.', 'irc.'],
-    boson: ['home.', 'redmine.'],
+    paper: ['exarkun.', 'mail.', 'irc.'],
     cube: ['ns1.'],
     tmtl: ['ns2.'],
 }
@@ -46,12 +44,8 @@ zone = [
     NS(name, 'ns1.intarweb.us'),
     NS(name, 'ns2.intarweb.us'),
 
-    CNAME('cname-loop.intarweb.us', 'cname-loop.intarweb.us'),
-    CNAME('cname-chain-1.intarweb.us', 'cname-chain-2.intarweb.us'),
-    CNAME('cname-chain-2.intarweb.us', 'mail.intarweb.us'),
-
-    CNAME('cname-chain-3.intarweb.us', 'cname-chain-4.intarweb.us'),
-    CNAME('cname-chain-4.intarweb.us', 'intarweb.us'),
+    CNAME('intarweb.us', 'intarweb.us.s3-website-us-east-1.amazonaws.com'),
+    CNAME('www.intarweb.us', 'intarweb.us.s3-website-us-east-1.amazonaws.com'),
 ]
 
 addSubdomains(name, zone, subs)

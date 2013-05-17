@@ -3,11 +3,10 @@ from twisted.names.authority import getSerial
 
 name = 'ynchrono.us'
 
-from hosts import cube, tmtl, neutrino, paper, posterous, addSubdomains
+from hosts import cube, tmtl, addSubdomains
 
 subs = {
     cube: ['ns1.'],
-    paper: ['s.'],
     tmtl: ['ns2.', ''],
 }
 
@@ -43,6 +42,8 @@ zone = [
     NS(name, 'ns2.ynchrono.us'),
 
     CNAME('as.ynchrono.us', 'ghs.google.com.', ttl='1D'),
+    CNAME('s.intarweb.us', 's.ynchrono.us.s3-website-us-east-1.amazonaws.com'),
+
 ]
 
 addSubdomains(name, zone, subs)
