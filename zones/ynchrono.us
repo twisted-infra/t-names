@@ -42,7 +42,7 @@ zone = [
     NS(name, 'ns2.ynchrono.us'),
 
     CNAME('as.ynchrono.us', 'ghs.google.com.', ttl='1D'),
-    CNAME('s.intarweb.us', 's.ynchrono.us.s3-website-us-east-1.amazonaws.com'),
+    CNAME('s.ynchrono.us', 's.ynchrono.us.s3-website-us-east-1.amazonaws.com'),
 
 ]
 
