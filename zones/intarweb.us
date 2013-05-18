@@ -3,7 +3,7 @@ from twisted.names.authority import getSerial
 
 name = 'intarweb.us'
 
-from hosts import cube, tmtl, paper, addSubdomains
+from hosts import dornkirk, cube, tmtl, paper, addSubdomains
 
 subs = {
     paper: ['exarkun.', 'mail.', 'irc.'],
