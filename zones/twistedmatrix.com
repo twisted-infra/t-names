@@ -52,6 +52,6 @@ zone = [
     CNAME('glyph.twistedmatrix.com', googleHosting, ttl='1D'),
     CNAME('secret.glyph.twistedmatrix.com', googleHosting, ttl='1D'),
     CNAME('labs.twistedmatrix.com', googleHosting, ttl='1D'),
-] + nameservers(name, cube, tmtl)
+] + nameservers(name)
 
 addSubdomains(name, zone, subs)

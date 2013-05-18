@@ -7,8 +7,9 @@ from hosts import cube, tmtl, paper, addSubdomains
 
 subs = {
     paper: ['exarkun.', 'mail.', 'irc.'],
-    cube: ['ns1.'],
+    dornkirk: ['ns1.'],
     tmtl: ['ns2.'],
+    cube: ['ns3.'],
 }
 
 zone = [

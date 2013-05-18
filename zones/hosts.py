@@ -26,7 +26,7 @@ def nameservers(host, *addresses):
     Return NS records and A record glue for the given host.
     """
     if not addresses:
-        addresses = [cube, tmrc]
+        addresses = [dornkirk, tmtl, cube]
     records = []
     for i, addr in enumerate(addresses):
         records.extend([

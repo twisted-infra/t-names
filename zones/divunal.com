@@ -38,6 +38,6 @@ zone = [
     ),
 
     MX(name, 10, 'mail.twistedmatrix.com'),
-] + nameservers(name, cube, tmtl)
+] + nameservers(name)
 
 addSubdomains(name, zone, subs)
