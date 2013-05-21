@@ -23,19 +23,19 @@ zone = [
         serial = getSerial(),
 
         # Time interval before zone should be refreshed
-        refresh = "1D",
+        refresh = "1H",
 
         # Interval before failed refresh should be retried
         retry = "15M",
 
         # Upper limit on time interval before expiry
-        expire = "1D",
+        expire = "1H",
 
         # Minimum TTL
-        minimum = "1D",
+        minimum = "1H",
 
         # Default TTL for records in this zone
-        ttl="1D",
+        ttl="1H",
     ),
 
     NS(name, 'ns1.twistedmatrix.com'),
