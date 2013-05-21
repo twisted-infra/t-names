@@ -27,7 +27,7 @@ zone = [
         serial = getSerial(),
 
         # Time interval before zone should be refreshed
-        refresh = "1D",
+        refresh = "1H",
 
         # Interval before failed refresh should be retried
         retry = "1H",
@@ -36,7 +36,7 @@ zone = [
         expire = "21D",
 
         # Minimum TTL
-        minimum = "1D"
+        minimum = "1H"
     ),
 
     NS(name, 'ns1.ynchrono.us'),

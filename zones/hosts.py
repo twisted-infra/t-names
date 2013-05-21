@@ -30,8 +30,8 @@ def nameservers(host, *addresses):
     records = []
     for i, addr in enumerate(addresses):
         records.extend([
-            (host, Record_NS('ns%d.twistedmatrix.com' % (i + 1,), ttl='1D')),
-            ('ns%d.twistedmatrix.com' % (i + 1,), Record_A(addr, ttl='1D'))
+            (host, Record_NS('ns%d.twistedmatrix.com' % (i + 1,), ttl='1H')),
+            ('ns%d.twistedmatrix.com' % (i + 1,), Record_A(addr, ttl='1H'))
         ])
     return records
 
@@ -42,4 +42,4 @@ def addSubdomains(host, zone, subs):
     """
     for (ip, hosts) in subs.items():
         for sub in hosts:
-            zone.append((sub + host, Record_A(ip, ttl="1D")))
+            zone.append((sub + host, Record_A(ip, ttl="1H")))

@@ -30,21 +30,21 @@ zone = [
         serial = getSerial(),
 
         # Time interval before zone should be refreshed
-        refresh = "1D",
+        refresh = "1H",
 
         # Interval before failed refresh should be retried
         retry = "15M",
 
         # Upper limit on time interval before expiry
-        expire = "1D",
+        expire = "1H",
 
         # Minimum TTL
-        minimum = "1D",
+        minimum = "1H",
 
-        ttl="1D",
+        ttl="1H",
     ),
 
-    MX(name, 5, 'mail.' + name, ttl='1D'),
+    MX(name, 5, 'mail.' + name, ttl='1H'),
 
     CNAME('planet.twistedmatrix.com', planet, ttl='1D'),
     CNAME('radix.twistedmatrix.com', googleHosting, ttl='1D'),
