@@ -42,4 +42,4 @@ def addSubdomains(host, zone, subs):
     """
     for (ip, hosts) in subs.items():
         for sub in hosts:
-            zone.append((sub + host, Record_A(ip, ttl="1H")))
+            zone.append((sub + host, Record_A(ip, ttl="5M")))
