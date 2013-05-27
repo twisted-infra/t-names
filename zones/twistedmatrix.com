@@ -30,7 +30,7 @@ zone = [
         serial = getSerial(),
 
         # Time interval before zone should be refreshed
-        refresh = "1H",
+        refresh = "5M",
 
         # Interval before failed refresh should be retried
         retry = "15M",
@@ -39,9 +39,9 @@ zone = [
         expire = "1H",
 
         # Minimum TTL
-        minimum = "1H",
+        minimum = "5M",
 
-        ttl="1H",
+        ttl="5M",
     ),
 
     MX(name, 5, 'mail.' + name, ttl='1H'),
