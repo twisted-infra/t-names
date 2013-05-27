@@ -9,7 +9,6 @@ subs = {
     paper: ['exarkun.', 'mail.', 'irc.'],
     dornkirk: ['ns1.'],
     tmtl: ['ns2.'],
-    cube: ['ns3.'],
 }
 
 zone = [

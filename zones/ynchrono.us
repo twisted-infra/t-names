@@ -8,7 +8,6 @@ from hosts import dornkirk, cube, tmtl, addSubdomains
 subs = {
     dornkirk: ['ns1.', ''],
     tmtl: ['ns2.', ''],
-    cube: ['ns3.'],
 }
 
 zone = [
