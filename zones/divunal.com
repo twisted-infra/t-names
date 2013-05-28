@@ -3,10 +3,10 @@ from twisted.names.authority import getSerial
 
 name = 'divunal.com'
 
-from hosts import cube, tmtl, nameservers, addSubdomains
+from hosts import tmtl, nameservers, addSubdomains
 
 subs = {
-    cube: [''],
+    dornkirk: [''],
 }
 
 zone = [

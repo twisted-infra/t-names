@@ -3,7 +3,7 @@ from twisted.names.authority import getSerial
 
 name = 'ynchrono.us'
 
-from hosts import dornkirk, cube, tmtl, addSubdomains
+from hosts import dornkirk, tmtl, addSubdomains
 
 subs = {
     dornkirk: ['ns1.', ''],
