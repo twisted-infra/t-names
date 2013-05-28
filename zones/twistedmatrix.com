@@ -6,11 +6,12 @@ name = 'twistedmatrix.com'
 from hosts import cube, dornkirk, tmtl, oloid, wolfwood, xpdev, planet, nameservers, addSubdomains, googleHosting
 
 subs = {
-    cube: ['cube.', 'reality.', 'irc.', 'saph.',
-           'java.', 'smtp.', 'mail.'],
+    cube: ['cube.'],
     wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
     oloid: ['oloid.'],
-    dornkirk: ['dornkirk.', '', 'projects.', 'ftp.', 'www.', 'buildbot.', 'speed.'],
+    dornkirk: ['dornkirk.', '', 'projects.', 'ftp.', 'www.', 'buildbot.', 'speed.',
+               'reality.', 'irc.', 'saph.',
+               'java.', 'smtp.', 'mail.'],
     xpdev: ['xpdev.'],
 }
 
