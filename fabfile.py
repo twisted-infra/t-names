@@ -45,4 +45,4 @@ class TwistedNames(service.Service):
 
 
 
-globals().update(TwistedNames('t-names').getTasks())
+globals().update(TwistedNames('t-names').getTasks(role='nameserver'))
