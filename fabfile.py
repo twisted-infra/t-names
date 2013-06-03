@@ -28,7 +28,7 @@ class TwistedNames(service.Service):
             self.update()
             cron.install(self.serviceUser, '{}/crontab'.format(self.configDir))
 
-
+    @git.track_calls()
     def update(self):
         """
         Update config.
