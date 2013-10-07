@@ -7,7 +7,7 @@ from hosts import cube, dornkirk, tmtl, oloid, wolfwood, xpdev, planet, nameserv
 
 subs = {
     cube: ['cube.'],
-    wolfwood: ['cvs.', 'wolfwood.', 'svn.'],
+    wolfwood: ['cvs.', 'wolfwood.', 'svn.', 'git.'],
     oloid: ['oloid.'],
     dornkirk: ['dornkirk.', '', 'projects.', 'ftp.', 'www.', 'buildbot.', 'speed.',
                'reality.', 'irc.', 'saph.',
