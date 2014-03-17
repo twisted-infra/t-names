@@ -16,7 +16,7 @@ boson = '209.6.87.187'
 googleHosting = 'ghs.google.com'
 paper = '67.207.132.219'
 posterous = '66.216.125.32'
-tmtl = '184.106.136.126'
+tmtl = '198.101.153.251'
 oloid = '64.90.56.39'
 dornkirk = '66.35.39.66'
 
