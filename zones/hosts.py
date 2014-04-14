@@ -20,13 +20,15 @@ tmtl = '198.101.153.251'
 oloid = '64.90.56.39'
 dornkirk = '66.35.39.66'
 
+buildmaster = '162.209.125.89'
+
 
 def nameservers(host, *addresses):
     """
     Return NS records and A record glue for the given host.
     """
     if not addresses:
-        addresses = [dornkirk, tmtl]
+        addresses = [dornkirk, tmtl, buildmaster]
     records = []
     for i, addr in enumerate(addresses):
         records.extend([
