@@ -11,4 +11,5 @@ authbind --deep ~pypy/bin/twistd \
     --pyzone $Z/divunal.com \
     --pyzone $Z/ynchrono.us \
     --pyzone $Z/divmod.com \
-    --pyzone $Z/divmod.org
+    --pyzone $Z/divmod.org \
+    --pyzone $Z/crookedsapling.us
