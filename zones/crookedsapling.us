@@ -35,5 +35,5 @@ zone = [
     ),
 
     CNAME(name, 'watchthis.farmr.com', ttl='5M'),
-    CNAME('lyra.' + name, 'bb862b25-1603-4b4e-9b0a-58170bfc78b3.s3-website-us-east-1.amazonaws.com', ttl='5M'),
+    CNAME('lyra.' + name, 'lyra.crookedsapling.us.s3-website-us-east-1.amazonaws.com', ttl='5M'),
 ] + nameservers(name)
