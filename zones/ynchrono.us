@@ -8,6 +8,7 @@ from hosts import dornkirk, tmtl, addSubdomains
 subs = {
     dornkirk: ['ns1.', ''],
     tmtl: ['ns2.', ''],
+    '104.130.225.186': ['chronology'],
 }
 
 zone = [
